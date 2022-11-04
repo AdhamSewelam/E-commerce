@@ -23,7 +23,7 @@ const HomeScreen = () => {
     loading: true,
     error: '',
   });
-  //const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
