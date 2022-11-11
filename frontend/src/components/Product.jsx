@@ -22,7 +22,7 @@ export default function Product(props) {
           </Link>
           <Rating rating={product.rating} numReviews={product.numReviews} />
           <Card.Text>${product.price}</Card.Text>
-          <Button className="bg-warning text-black border-warning">Add to cart</Button>
+          <Button variant="warning">Add to cart</Button>
         </Card.Body>
       </Card>
     </>
