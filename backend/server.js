@@ -3,6 +3,8 @@ import data from './data.js';
 import mongoose from 'mongoose';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
+import seedRouter from './routes/seedRoutes.js';
+import productRouter from './routes/productRoutes.js';
 dotenv.config();
 
 mongoose
@@ -15,34 +17,12 @@ mongoose
   });
 
 const app = express();
+
+app.use('/api/seed', seedRouter);
+
 app.use(cors());
 
-app.get('/api/products', async (req, res) => {
-  try {
-    await res.send(data.products);
-    console.log('data =', data.products);
-  } catch (error) {
-    console.log(error);
-  }
-});
-
-app.get('/api/products/slug/:slug', async (req, res) => {
-  const product = data.products.find((x) => x.slug === req.params.slug);
-  if (product) {
-    await res.send(product);
-  } else {
-    res.status(404).send({ message: 'Product not found' });
-  }
-});
-
-app.get('/api/products/:id', async (req, res) => {
-  const product = data.products.find((x) => x._id === req.params.id);
-  if (product) {
-    await res.send(product);
-  } else {
-    res.status(404).send({ message: 'Product not found' });
-  }
-});
+app.use('/api/products', productRouter);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
