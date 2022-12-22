@@ -102,3 +102,6 @@
     1. Create input forms
     2. handle submit
     3. create backend api
+24. Create Payment Screen
+    1. create input forms
+    2. handle submit
