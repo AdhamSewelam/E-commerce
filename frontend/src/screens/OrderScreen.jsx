@@ -76,7 +76,7 @@ export default function OrderScreen() {
           `/api/orders/${order._id}/pay`,
           details,
           {
-            headers: { authorization: `Bearer ${userInfo.token}` },
+            headers: { Authorization: `Bearer ${userInfo.token}` },
           }
         );
         dispatch({ type: 'PAY_SUCCESS', payload: data });
@@ -96,7 +96,7 @@ export default function OrderScreen() {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
         const { data } = await axios.get(`/api/orders/${orderId}`, {
-          headers: { authorization: `Bearer ${userInfo.token}` },
+          headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) {
@@ -115,7 +115,7 @@ export default function OrderScreen() {
     } else {
       const loadPaypalScript = async () => {
         const { data: clientId } = await axios.get('/api/keys/paypal', {
-          headers: { authorization: `Bearer ${userInfo.token}` },
+          headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         paypalDispatch({
           type: 'resetOptions',
