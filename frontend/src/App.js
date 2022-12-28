@@ -77,7 +77,7 @@ function App() {
               </Button>
 
               <LinkContainer to="/">
-                <Navbar.Brand>Amazon</Navbar.Brand>
+                <Navbar.Brand>E-Commerce</Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
@@ -147,7 +147,7 @@ function App() {
             </Nav.Item>
             {categories.map((category) => (
               <Nav.Item key={category}>
-                <Link
+                <Link className='text-warning p-4'
                   to={`/search?category=${category}`}
                   onClick={() => setSidebarIsOpen(false)}
                 >
@@ -206,7 +206,7 @@ function App() {
           </Container>
         </main>
         <footer>
-          <div className="text-center">All Right Reseved</div>
+          <div className="text-center py-3 bg-dark text-white">© All Right Reseved</div>
         </footer>
       </div>
     </BrowserRouter>

@@ -74,7 +74,7 @@ export default function ProductScreen() {
   ) : (
     <div>
       <Row>
-        <Col md={5} className="text-center">
+        <Col md={5} className="text-center pb-1">
           <img className="img-large" src={product.image} alt={product.name} />
         </Col>
         <Col md={4}>

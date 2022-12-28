@@ -84,3 +84,11 @@ main {
 .text-bold {
   font-weight: bold;
 }
+.productName {
+  color: #100901;
+  transition: 0.3s;
+}
+.productName:hover {
+  color: #FFC107;
+  transition: 0.3s;
+}
